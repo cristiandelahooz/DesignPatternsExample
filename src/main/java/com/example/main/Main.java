@@ -22,10 +22,11 @@ public class Main {
         AbstractFactory abstractFactory = new ConcreteFactory1();
         System.out.println("Abstract Factory: " + abstractFactory.createProductA().getType());
 
-        // Prototype
-        ConcretePrototype prototype1 = new ConcretePrototype("Original");
-        ConcretePrototype prototype2 = (ConcretePrototype) prototype1.clone();
-        System.out.println("Prototype Clonado: " + prototype2.getName());
+	//Prototype
+	PrototypeRegistry registry = new PrototypeRegistry();
+        Button button = new Button(10, 40, "red");
+        registry.addItem("LandingButton", button);
+        Button clonedButton = (Button) registry.getByColor("red");
 
         // Builder
         Director director = new Director();
