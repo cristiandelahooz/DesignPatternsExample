@@ -9,6 +9,11 @@ public class House {
     this.windows = builder.windows;
   }
 
+  @Override
+  public String toString() {
+    return "House with " + doors + " doors and " + windows + " windows";
+  }
+
   public static class HouseBuilder {
     private int doors;
     private int windows;
