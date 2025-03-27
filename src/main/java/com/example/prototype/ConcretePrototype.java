@@ -1,13 +1,17 @@
 package com.example.prototype;
 
-public class ConcretePrototype extends Prototype {
-    private String message;
-    
-    public ConcretePrototype(String message) {
-        this.message = message;
+public class ConcretePrototype implements Prototype {
+    private String name;
+
+    public ConcretePrototype(String name) {
+        this.name = name;
     }
-    
-    public String getMessage() {
-        return message;
+
+    public Prototype clone() {
+        return new ConcretePrototype(this.name);
+    }
+
+    public String getName() {
+        return name;
     }
 }
