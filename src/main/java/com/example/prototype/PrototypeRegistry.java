@@ -1,19 +1,24 @@
 package com.example.prototype;
 
-class PrototypeRegistry {
-    private List<Prototype> items = new ArrayList<>();
+import java.util.ArrayList;
+import java.util.List;
 
-    public void addItem(String id, Prototype p) {
-        items.add(p);
-    }
+public class PrototypeRegistry {
+  private List<Prototype> items = new ArrayList<>();
 
-    public Prototype getByColor(String color) {
-        for (Prototype item : items) {
-            if (item.getColor().equals(color)) {
-                return item.clone();
-            }
-        }
-        return null;
+  public PrototypeRegistry() {
+  }
+
+  public void addItem(String id, Prototype p) {
+    items.add(p);
+  }
+
+  public Prototype getByColor(String color) {
+    for (Prototype item : items) {
+      if (item.getColor().equals(color)) {
+        return item.clone();
+      }
     }
+    return null;
+  }
 }
-
